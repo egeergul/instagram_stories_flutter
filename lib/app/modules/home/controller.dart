@@ -1,4 +1,5 @@
 import 'package:case_study/app/data/dummy_data/dummy_users.dart';
+import 'package:case_study/app/data/models/story.dart';
 import 'package:case_study/app/data/models/user.dart';
 import 'package:get/get.dart';
 
@@ -27,11 +28,6 @@ class HomeController extends GetxController {
   UserModel getUser(int index) {
     /// The user distinguished with its position in the users list
     return users[index];
-  }
-
-  int getNextUnwatchedStoryIndex(int index) {
-    if (users[index].completedOnce) return 0;
-    return users[index].watchedStories;
   }
 
   @override

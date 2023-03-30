@@ -19,6 +19,21 @@ class StoryScreen extends StatefulWidget {
 class _StoryScreenState extends State<StoryScreen> {
   final homeController = Get.find<HomeController>();
 
+  late ValueNotifier<IndicatorAnimationCommand> indicatorAnimationController;
+
+  @override
+  void initState() {
+    super.initState();
+    indicatorAnimationController = ValueNotifier<IndicatorAnimationCommand>(
+        IndicatorAnimationCommand.resume);
+  }
+
+  @override
+  void dispose() {
+    indicatorAnimationController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Dismissible(
@@ -28,49 +43,62 @@ class _StoryScreenState extends State<StoryScreen> {
       onDismissed: (_) => Get.to(HomeScreen()),
       child: SafeArea(
         child: StoryPageView(
-            itemBuilder: (context, pageIndex, storyIndex) {
-              var user = dataUsers[pageIndex];
-              var story = user.stories[storyIndex];
+          itemBuilder: (context, pageIndex, storyIndex) {
+            var user = dataUsers[pageIndex];
+            var story = user.stories[storyIndex];
 
-              // As the item is being built (the story of user withc pageIndex,
-              // and story number of storyIndex), set that specific story as viewed
-              homeController.setWatched(pageIndex, storyIndex + 1);
-
-              return Stack(
-                children: [
-                  Positioned.fill(child: Container(color: Colors.black,)),
-                  story.isVideo
-                      ? VideoPlayerWidget( videoURL: story.imageUrl)
-                      : Positioned.fill(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: NetworkImage(story.imageUrl)
-                                )
-                            ),
+            // As the item is being built (the story of user withc pageIndex,
+            // and story number of storyIndex), set that specific story as viewed
+            homeController.setWatched(pageIndex, storyIndex + 1);
+            
+            return Stack(
+              children: [
+                Positioned.fill(child: Container(color: Colors.black,)),
+                !story.isVideo ?  
+                  Positioned.fill(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: NetworkImage(story.imageUrl)
                           )
-                        ),
-                  UserInfo(user: user)
-                ],
-              );
-            },
-            pageLength: dataUsers.length, // Total number of users
-            storyLength: (pageIndex) => dataUsers[pageIndex].stories.length, // Each user's story no
-            onPageLimitReached: () {
-              Get.to(HomeScreen()); // When the last user's last story is viewed
-              // go bavk to the home screen.
-            },
-            initialPage: widget.index, // The selected user's index
-            initialStoryIndex: (index) {
-              // if the user's all stories have been viewed before, start again 
-              // from the first story of that user
-              if (homeController.users[index].completedOnce) return 0;
+                      ),
+                    )
+                  ) : Center(),
+                UserInfo(user: user),
+              ],
+            );
+          },
+          pageLength: dataUsers.length, // Total number of users
+          storyLength: (pageIndex) => dataUsers[pageIndex].stories.length, // Each user's story no
+          onPageLimitReached: () {
+            Get.to(HomeScreen()); // When the last user's last story is viewed
+            // go bavk to the home screen.
+          },
+          initialPage: widget.index, // The selected user's index
+          initialStoryIndex: (index) {
+            // if the user's all stories have been viewed before, start again 
+            // from the first story of that user
+            if (homeController.users[index].completedOnce) return 0;
+            // if not, continue from where you left off
+            return homeController.users[index].watchedStories;
+          },
 
-              // if not, continue from where you left off
-              return homeController.users[index].watchedStories;
-            },
-            showShadow: true),
+          gestureItemBuilder: (context, pageIndex, storyIndex) {
+            return Stack(children: [
+              if (homeController.getUser(pageIndex).stories[storyIndex].isVideo)
+                Center( 
+                  child: VideoPlayerWidget( 
+                    videoURL: homeController.getUser(pageIndex).stories[storyIndex].imageUrl,
+                    indicatorAnimationController: indicatorAnimationController,
+                  )
+                ),
+            ]);
+          },
+
+          indicatorAnimationController: indicatorAnimationController,
+          showShadow: true
+        ),
       ),
     );
   }
