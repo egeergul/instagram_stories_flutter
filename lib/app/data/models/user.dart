@@ -17,12 +17,13 @@ class UserModel {
       required this.completedOnce});
   
   factory UserModel.fromJson(Map<String, dynamic> json) {
-
+    // First convert the stories of user from Json to Object
     List<StoryModel> stories = [];
     for (var story in json["stories"]) {
       stories.add(StoryModel.fromJson(story));
     }
 
+    // Then using the stories converted above, create the user object from Json
     return UserModel(
       profileUrl: json["profileUrl"],
       name: json["name"], 

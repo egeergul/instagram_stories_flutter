@@ -7,20 +7,17 @@ import '../../core/utils/styles.dart';
 import '../../controllers/controller.dart';
 
 /// Stateful widget to fetch and then display video content.
-class HomeScreen extends StatefulWidget {
+// ignore: must_be_immutable
+class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   /// The control of the stories
   late StoriesController storiesController = Get.find<StoriesController>();
 
   @override
   Widget build(BuildContext context) {
     return Obx(() => !storiesController.isInit.value
+        // Until the stories controller has been initialized, show CircularProgressIndicator
         ? const Center(child: CircularProgressIndicator())
         : Scaffold(
             appBar: AppBar(
@@ -53,22 +50,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 SizedBox(
                   height: 12.0.hp,
                   child: ListView.builder(
-                      itemCount: storiesController.getNoOfUsers(),
-                      scrollDirection: Axis.horizontal,
-                      padding: EdgeInsets.symmetric(horizontal: 5.0.wp),
-                      itemBuilder: (context, index) {
-                        return InkWell(
-                          onTap: () {
-                            Get.to(() => StoryScreen(index: index),
-                                // VideoApp(videoURL: "assets/v1.mp4"),
-
-                                duration: const Duration(milliseconds: 100),
-                                transition: Transition.downToUp);
-                          },
-                          child: UserItem(
-                              userData: storiesController.getUser(index)),
-                        );
-                      }),
+                    itemCount: storiesController.getNoOfUsers(),
+                    scrollDirection: Axis.horizontal,
+                    padding: EdgeInsets.symmetric(horizontal: 5.0.wp),
+                    itemBuilder: (context, index) {
+                      return InkWell(
+                        onTap: () {
+                          Get.to(() => StoryScreen(index: index),
+                              // VideoApp(videoURL: "assets/v1.mp4"),
+                              duration: const Duration(milliseconds: 100),
+                              transition: Transition.downToUp);
+                        },
+                        child: UserItem(
+                            userData: storiesController.getUser(index)),
+                      );
+                    }
+                  ),
                 ),
                 const Divider(),
                 Expanded(

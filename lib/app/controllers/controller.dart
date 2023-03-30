@@ -8,9 +8,10 @@ class StoriesController extends GetxController {
   StoriesController();
 
   // Properties
-  final isInit = false.obs;
+  final isInit = false.obs; // observable variable to notify that controller has been initialized
   final users = <UserModel>[].obs; /// The list of users
 
+  /// A function to read the json data from assets folder and return it as a list of objects.
   Future<List<UserModel>> readUsers()async {
     var users = <UserModel>[];
     String raw = await rootBundle.loadString('assets/dummy_users.json');
@@ -25,9 +26,10 @@ class StoriesController extends GetxController {
   @override
   Future<void> onInit() async {
     super.onInit();
+    // Since the read users function is async, we need to wait it.
     users
         .assignAll(await readUsers()); // initialize the users list using the dummy data
-    isInit.value = true;
+    isInit.value = true; // when the async fcn returns, set the isInit flag as true
   }
 
   /// The setWatched method sets [userIndex] and [storyIndex] to update the users

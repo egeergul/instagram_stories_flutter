@@ -13,44 +13,45 @@ class UserItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(right: 4.0.wp),
-        child: Column(
-          children: [
-            Container(
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: !userData.completedOnce // if all the stories of the
-                      // user has been viewed even once, make its background grey
-                      ? const LinearGradient(colors: [
-                          purple,
-                          pink,
-                          deepPink,
-                          yellow,
-                          orange,
-                          red,
-                          blue
-                        ], begin: Alignment.bottomLeft, end: Alignment.topRight)
-                      : const LinearGradient(
-                          colors: [Colors.grey, Colors.black12],
-                          begin: Alignment.bottomLeft,
-                          end: Alignment.topRight)),
+      padding: EdgeInsets.only(right: 4.0.wp),
+      child: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: !userData.completedOnce // if all the stories of the
+                    // user has been viewed even once, make its background grey
+                    ? const LinearGradient(colors: [
+                        purple,
+                        pink,
+                        deepPink,
+                        yellow,
+                        orange,
+                        red,
+                        blue
+                      ], begin: Alignment.bottomLeft, end: Alignment.topRight)
+                    : const LinearGradient(
+                        colors: [Colors.grey, Colors.black12],
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight)),
+            child: CircleAvatar(
+              radius: 40,
+              backgroundColor: Colors.transparent,
               child: CircleAvatar(
-                radius: 40,
-                backgroundColor: Colors.transparent,
-                child: CircleAvatar(
-                  radius: 37,
-                  backgroundImage: AssetImage(userData.profileUrl),
-                ),
+                radius: 37,
+                backgroundImage: AssetImage(userData.profileUrl),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 5.0),
-              child: Text(
-                userData.name,
-                style: textSize8,
-              ),
-            )
-          ],
-        ));
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0),
+            child: Text(
+              userData.name,
+              style: textSize8,
+            ),
+          )
+        ],
+      )
+    );
   }
 }
