@@ -10,8 +10,8 @@ Ege Ergül's submission for the first case study of Codeway
 [<img src="https://github.com/egeergul/codeway_case_study/blob/20ee7fe91ad9f9cf6849438580cfc4d2f5549310/readme_images/ss5.png" width="300">](https://youtu.be/ncZAPbEL7fs)
 
 ## DEMO
-In the home screen, all of the users, their usernames and their profile images can be seen as a horzontally scrollable list.
 <img alt="Demonstration (click to download)" align="left" src="https://github.com/egeergul/codeway_case_study/blob/122c223bb5e55aafb2e6545bccbf1c5af50dea7c/readme_images/ss1.png" width="240" >
+In the home screen, all of the users, their usernames and their profile images can be seen as a horzontally scrollable list.
 <br clear="left"/>
 <br/>
 
