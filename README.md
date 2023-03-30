@@ -10,7 +10,7 @@ Ege Ergül's submission for the first case study of Codeway
 [<img src="https://github.com/egeergul/codeway_case_study/blob/20ee7fe91ad9f9cf6849438580cfc4d2f5549310/readme_images/ss5.png" width="300">](https://youtu.be/ncZAPbEL7fs)
 
 ## Expectations
-The followings are what our module needs to be able to do.
+The followings are what our module needs to be able to do. I checked the fulfilled requirements (11/11).
 - [x] Cubic transition among story groups.
 - [x] Pause the story immediately when the users rest and hold, continue when lifted.
 - [x] Go to the previous story and/or story group when users tapped left.
