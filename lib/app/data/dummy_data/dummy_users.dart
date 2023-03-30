@@ -85,7 +85,7 @@ final dataUsers = [
       stories: [
         StoryModel(imageUrl: user2URLs[0], isVideo: false),
         StoryModel(imageUrl: user2URLs[1], isVideo: false),
-        StoryModel(imageUrl: user2URLs[2], isVideo: false),
+        StoryModel(imageUrl: "assets/v2.mp4", isVideo: true),
         StoryModel(imageUrl: user2URLs[3], isVideo: false),
       ]),
   UserModel(

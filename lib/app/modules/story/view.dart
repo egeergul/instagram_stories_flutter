@@ -1,4 +1,3 @@
-
 import 'package:case_study/app/data/dummy_data/dummy_users.dart';
 import 'package:case_study/app/modules/home/controller.dart';
 import 'package:case_study/app/modules/home/view.dart';
