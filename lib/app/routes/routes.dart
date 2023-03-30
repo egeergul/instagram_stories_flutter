@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../modules/home/view.dart';
+import '../modules/home/home_screen.dart';
 
 class RouteClass {
   static String home = "/";

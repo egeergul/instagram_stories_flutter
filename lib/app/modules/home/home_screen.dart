@@ -1,14 +1,15 @@
 import 'package:case_study/app/core/utils/extensions.dart';
-import 'package:case_study/app/modules/home/controller.dart';
 import 'package:case_study/app/modules/home/widgets/user_item.dart';
-import 'package:case_study/app/modules/story/view.dart';
+import 'package:case_study/app/modules/story/story_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core/utils/styles.dart';
+import '../../controllers/controller.dart';
 
 class HomeScreen extends StatelessWidget {
+  final StoriesController c = Get.put(StoriesController());
   /// The control of the home screen
-  final homeController = Get.find<HomeController>();
+  final storiesController = Get.find<StoriesController>();
   HomeScreen({super.key});
 
   @override
@@ -43,7 +44,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 12.0.hp,
               child: ListView.builder(
-                  itemCount: homeController.getNoOfUsers(),
+                  itemCount: storiesController.getNoOfUsers(),
                   scrollDirection: Axis.horizontal,
                   padding: EdgeInsets.symmetric(horizontal: 5.0.wp),
                   itemBuilder: (context, index) {
@@ -55,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                             duration: const Duration(milliseconds: 100),
                             transition: Transition.downToUp);
                       },
-                      child: UserItem(userData: homeController.getUser(index)),
+                      child: UserItem(userData: storiesController.getUser(index)),
                     );
                   }),
             ),

@@ -3,8 +3,8 @@ import 'package:case_study/app/data/models/story.dart';
 import 'package:case_study/app/data/models/user.dart';
 import 'package:get/get.dart';
 
-class HomeController extends GetxController {
-  HomeController();
+class StoriesController extends GetxController {
+  StoriesController();
 
   /// The list of users
   final users = <UserModel>[].obs;

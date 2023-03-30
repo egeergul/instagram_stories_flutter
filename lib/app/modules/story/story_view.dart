@@ -1,11 +1,11 @@
 import 'package:case_study/app/data/dummy_data/dummy_users.dart';
-import 'package:case_study/app/modules/home/controller.dart';
-import 'package:case_study/app/modules/home/view.dart';
+import 'package:case_study/app/modules/home/home_screen.dart';
 import 'package:case_study/app/modules/story/widgets/video_player.dart';
 import 'package:case_study/app/modules/story/widgets/user_info.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'story_package/story.dart';
+import '../../controllers/controller.dart';
 
 class StoryScreen extends StatefulWidget {
   StoryScreen({super.key, required this.index});
@@ -16,7 +16,7 @@ class StoryScreen extends StatefulWidget {
 }
 
 class _StoryScreenState extends State<StoryScreen> {
-  final homeController = Get.find<HomeController>();
+  final storiesController = Get.find<StoriesController>();
 
   late ValueNotifier<IndicatorAnimationCommand> indicatorAnimationController;
 
@@ -48,7 +48,7 @@ class _StoryScreenState extends State<StoryScreen> {
 
             // As the item is being built (the story of user withc pageIndex,
             // and story number of storyIndex), set that specific story as viewed
-            homeController.setWatched(pageIndex, storyIndex + 1);
+            storiesController.setWatched(pageIndex, storyIndex + 1);
             
             return Stack(
               children: [
@@ -78,17 +78,17 @@ class _StoryScreenState extends State<StoryScreen> {
           initialStoryIndex: (index) {
             // if the user's all stories have been viewed before, start again 
             // from the first story of that user
-            if (homeController.users[index].completedOnce) return 0;
+            if (storiesController.users[index].completedOnce) return 0;
             // if not, continue from where you left off
-            return homeController.users[index].watchedStories;
+            return storiesController.users[index].watchedStories;
           },
 
           gestureItemBuilder: (context, pageIndex, storyIndex) {
             return Stack(children: [
-              if (homeController.getUser(pageIndex).stories[storyIndex].isVideo)
+              if (storiesController.getUser(pageIndex).stories[storyIndex].isVideo)
                 Center( 
                   child: VideoPlayerWidget( 
-                    videoURL: homeController.getUser(pageIndex).stories[storyIndex].imageUrl,
+                    videoURL: storiesController.getUser(pageIndex).stories[storyIndex].imageUrl,
                     indicatorAnimationController: indicatorAnimationController,
                   )
                 ),
