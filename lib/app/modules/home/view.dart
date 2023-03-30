@@ -49,11 +49,9 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Get.to(
-                            () => StoryScreen(
-                                  index:
-                                      index, // The index of the user in the users list
-                                ),
+                        Get.to(() => StoryScreen(index: index),
+                            // VideoApp(videoURL: "assets/v1.mp4"),
+
                             duration: const Duration(milliseconds: 100),
                             transition: Transition.downToUp);
                       },

@@ -29,6 +29,11 @@ class HomeController extends GetxController {
     return users[index];
   }
 
+  int getNextUnwatchedStoryIndex(int index) {
+    if (users[index].completedOnce) return 0;
+    return users[index].watchedStories;
+  }
+
   @override
   void onInit() {
     super.onInit();

@@ -74,7 +74,7 @@ final dataUsers = [
       stories: [
         StoryModel(imageUrl: user1URLs[0], isVideo: false),
         StoryModel(imageUrl: user1URLs[1], isVideo: false),
-        StoryModel(imageUrl: user1URLs[2], isVideo: false),
+        StoryModel(imageUrl: "assets/v1.mp4", isVideo: true),
       ]),
   UserModel(
       profileUrl: pps[1],
