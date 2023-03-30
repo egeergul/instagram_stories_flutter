@@ -11,18 +11,18 @@ Ege Ergül's submission for the first case study of Codeway
 
 ## DEMO
 In the home screen, all of the users, their usernames and their profile images can be seen as a horzontally scrollable list.
-<img alf="Demonstration (click to download)" align="left" src="https://user-images.githubusercontent.com/63500329/228835418-f1fb6521-b069-4253-8a56-7b8555575762.mov" width="240" >
+<img alt="Demonstration (click to download)" align="left" src="https://github.com/egeergul/codeway_case_study/blob/122c223bb5e55aafb2e6545bccbf1c5af50dea7c/readme_images/ss1.png" width="240" >
 <br clear="left"/>
 <br/>
 
-<img align="left" src="https://github.com/egeergul/codeway_case_study_v2/blob/7f5b02b08778bb696e2b30d18574c84751fc40b2/readme_images/ss2.png" width="240" >
+<img  alt="Demonstration (click to download)" align="left" src="https://github.com/egeergul/codeway_case_study/blob/122c223bb5e55aafb2e6545bccbf1c5af50dea7c/readme_images/ss2.png" width="240" >
 When a user has been clicked, their stories are started to being viewed. On the top of the screen, the remaining viewing time takes places.
 <br clear="left"/>
 
-<img align="left" src="https://github.com/egeergul/codeway_case_study_v2/blob/7f5b02b08778bb696e2b30d18574c84751fc40b2/readme_images/ss3.png" width="240" >
+<img alt="Demonstration (click to download)"  align="left" src="https://github.com/egeergul/codeway_case_study/blob/122c223bb5e55aafb2e6545bccbf1c5af50dea7c/readme_images/ss3.png" width="240" >
 As it can be seen from this image, the transition between users are in a rectangular format, just like the actual Instagram!
 <br clear="left"/>
 
-<img align="left" src="https://github.com/egeergul/codeway_case_study_v2/blob/7f5b02b08778bb696e2b30d18574c84751fc40b2/readme_images/ss4.png" width="240" >
+<img  alt="Demonstration (click to download)" align="left" src="https://github.com/egeergul/codeway_case_study/blob/122c223bb5e55aafb2e6545bccbf1c5af50dea7c/readme_images/ss4.png" width="240" >
 Last of all, notice that after all of the stories of a user has been viewed, the circle behind their profile picture becomes grey.
 <br clear="left"/>
