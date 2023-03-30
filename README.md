@@ -11,7 +11,8 @@ Ege Ergül's submission for the first case study of Codeway
 
 ## DEMO
 In the home screen, all of the users, their usernames and their profile images can be seen as a horzontally scrollable list.
-<img align="left" src="https://user-images.githubusercontent.com/63500329/228835418-f1fb6521-b069-4253-8a56-7b8555575762.mov" width="240" >
+<img align="left" src="" width="240" >
+https://user-images.githubusercontent.com/63500329/228835418-f1fb6521-b069-4253-8a56-7b8555575762.mov
 <br clear="left"/>
 <br/>
 
