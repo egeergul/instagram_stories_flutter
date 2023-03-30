@@ -19,33 +19,33 @@ class VideoPlayerWidget extends StatefulWidget {
 }
 
 class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
-  late VideoPlayerController controller;
+  late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    controller = VideoPlayerController.asset(widget.videoURL)
+    _controller = VideoPlayerController.asset(widget.videoURL)
       ..initialize().then((_) {
-        controller.play();
+        _controller.play();
         // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
         setState(() {});
       });
   }
 
-  bool _buttonPressed = false;
+  bool _screenPressed = false;
   bool _loopActive = false;
 
-  void _increaseCounterWhilePressed() async {
+  void _pauseVideoWhilePressed() async {
     // make sure that only one loop is active
     if (_loopActive) return;
 
     _loopActive = true;
 
-    while (_buttonPressed) {
+    while (_screenPressed) {
       // do your thing
       setState(() {
         widget.indicatorAnimationController.value = IndicatorAnimationCommand.pause;
-        controller.pause();
+        _controller.pause();
       });
 
       // wait a bit
@@ -54,31 +54,28 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
 
     _loopActive = false;
     widget.indicatorAnimationController.value = IndicatorAnimationCommand.resume;
-    controller.play();
+    _controller.play();
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Center(
-          child: controller.value.isInitialized
+          child: _controller.value.isInitialized
               ? 
               Center(
                 child: Listener(
                   onPointerDown: (details) {
-                    _buttonPressed = true;
-                    _increaseCounterWhilePressed();
+                    _screenPressed = true;
+                    _pauseVideoWhilePressed();
                   },
                   onPointerUp: (details) {
-                    _buttonPressed = false;
+                    _screenPressed = false;
                   },
-                  child:
-                  //---------
-                  AspectRatio(
-                    aspectRatio: controller.value.aspectRatio,
-                    child: VideoPlayer(controller),
+                  child: AspectRatio(
+                    aspectRatio: _controller.value.aspectRatio,
+                    child: VideoPlayer(_controller),
                   )
-                  //---------
                 )
               )
               : Container(
@@ -95,6 +92,6 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void dispose() {
     super.dispose();
-    controller.dispose();
+    _controller.dispose();
   }
 }
