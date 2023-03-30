@@ -1,4 +1,5 @@
 import 'package:case_study/app/core/utils/extensions.dart';
+import 'package:case_study/app/core/utils/styles.dart';
 import 'package:case_study/app/data/models/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -27,11 +28,7 @@ class UserInfo extends StatelessWidget {
             padding: EdgeInsets.only(left: 2.0.wp),
             child: Text(
               user.name,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w400,
-                fontSize: 12.0.sp,
-              ),
+              style: textBoldSize12,
             ),
           )
         ],
