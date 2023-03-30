@@ -7,7 +7,7 @@ Ege Ergül's submission for the first case study of Codeway
 * LinkedIn : [ege-ergul](https://www.linkedin.com/in/ege-ergul/)
 
 ## [Watch This Video (My Demo)](https://www.youtube.com/watch?v=tuueYZxGlfs)
-[<img src="https://github.com/egeergul/codeway_case_study/blob/6f4ea4c44c071d8e3f6db99b79bb09d9cbe42d1b/readme_images/ss5.png" width="300">](https://www.youtube.com/watch?v=tuueYZxGlfs)
+[<img src="https://github.com/egeergul/codeway_case_study/blob/20ee7fe91ad9f9cf6849438580cfc4d2f5549310/readme_images/ss5.png" width="300">](https://www.youtube.com/watch?v=tuueYZxGlfs)
 
 ## DEMO
 In the home screen, all of the users, their usernames and their profile images can be seen as a horzontally scrollable list.
