@@ -1,8 +1,10 @@
+import 'package:case_study/app/controllers/controller.dart';
 import 'package:case_study/app/routes/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main()  {
+  Get.put( StoriesController());
   runApp(const MyApp());
 }
 
@@ -19,7 +21,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: RouteClass.getHomeRoute(),
       getPages: RouteClass.routes,
-
     );
   }
 }

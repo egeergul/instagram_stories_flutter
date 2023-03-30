@@ -1,13 +1,34 @@
-import 'package:case_study/app/data/dummy_data/dummy_users.dart';
-import 'package:case_study/app/data/models/story.dart';
+import 'dart:convert';
 import 'package:case_study/app/data/models/user.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+
 
 class StoriesController extends GetxController {
   StoriesController();
 
-  /// The list of users
-  final users = <UserModel>[].obs;
+  // Properties
+  final isInit = false.obs;
+  final users = <UserModel>[].obs; /// The list of users
+
+  Future<List<UserModel>> readUsers()async {
+    var users = <UserModel>[];
+    String raw = await rootBundle.loadString('assets/dummy_users.json');
+    final data = json.decode(raw)["users"];
+
+    data.forEach((e){
+      users.add(UserModel.fromJson(e));
+    });
+    return users;
+  }
+
+  @override
+  Future<void> onInit() async {
+    super.onInit();
+    users
+        .assignAll(await readUsers()); // initialize the users list using the dummy data
+    isInit.value = true;
+  }
 
   /// The setWatched method sets [userIndex] and [storyIndex] to update the users
   /// list. The [storyIndex]th story of the user with [userIndex] is set as viewed.
@@ -30,10 +51,4 @@ class StoriesController extends GetxController {
     return users[index];
   }
 
-  @override
-  void onInit() {
-    super.onInit();
-    users
-        .assignAll(dataUsers); // initialize the users list using the dummy data
-  }
 }

@@ -1,4 +1,3 @@
-import 'package:case_study/app/data/dummy_data/dummy_users.dart';
 import 'package:case_study/app/modules/home/home_screen.dart';
 import 'package:case_study/app/modules/story/widgets/video_player.dart';
 import 'package:case_study/app/modules/story/widgets/user_info.dart';
@@ -44,7 +43,7 @@ class _StoryScreenState extends State<StoryScreen> {
         child: Scaffold(
           body: StoryPageView(
             itemBuilder: (context, pageIndex, storyIndex) {
-              var user = dataUsers[pageIndex];
+              var user = storiesController.users[pageIndex];
               var story = user.stories[storyIndex];
         
               // As the item is being built (the story of user withc pageIndex,
@@ -69,8 +68,8 @@ class _StoryScreenState extends State<StoryScreen> {
                 ],
               );
             },
-            pageLength: dataUsers.length, // Total number of users
-            storyLength: (pageIndex) => dataUsers[pageIndex].stories.length, // Each user's story no
+            pageLength: storiesController.users.length, // Total number of users
+            storyLength: (pageIndex) => storiesController.users[pageIndex].stories.length, // Each user's story no
             onPageLimitReached: () {
               Get.to(HomeScreen()); // When the last user's last story is viewed
               // go bavk to the home screen.

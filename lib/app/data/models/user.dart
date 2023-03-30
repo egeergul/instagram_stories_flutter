@@ -15,4 +15,22 @@ class UserModel {
       required this.numOfStories,
       required this.watchedStories,
       required this.completedOnce});
+  
+  factory UserModel.fromJson(Map<String, dynamic> json) {
+
+    List<StoryModel> stories = [];
+    for (var story in json["stories"]) {
+      stories.add(StoryModel.fromJson(story));
+    }
+
+    return UserModel(
+      profileUrl: json["profileUrl"],
+      name: json["name"], 
+      stories: stories,
+      numOfStories: json["numOfStories"], 
+      watchedStories: json["watchedStories"],
+      completedOnce: json["completedOnce"],   
+    );
+  }
+
 }

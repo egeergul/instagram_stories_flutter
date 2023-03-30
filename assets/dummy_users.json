@@ -1,0 +1,151 @@
+{
+    "users": [
+        {
+            "name": "Sponge Bob",
+            "profileUrl": "assets/images/pp1.jpg",
+            "numOfStories": 3,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://www.xtrafondos.com/wallpapers/vertical/bob-esponja-minimalista-4380.jpg"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://w0.peakpx.com/wallpaper/391/386/HD-wallpaper-qt-spongebob-bob-sponge-thumbnail.jpg"
+                },
+                {
+                    "isVideo": true,
+                    "imageUrl": "assets/v1.mp4"
+                }
+            ]
+        },
+        {
+            "name": "Patrick Star",
+            "profileUrl": "assets/images/pp2.jpg",
+            "numOfStories": 4,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://m.media-amazon.com/images/M/MV5BYmNhZGIwYjYtYjViMi00NmJlLWFjOTUtNTBlYzgwMzgyYTkyXkEyXkFqcGdeQXVyMTM1NTIzOTI1._V1_UY1200_CR473,0,630,1200_AL_.jpg"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71VRsCqQ+LL._AC_UY1000_.jpg"
+                },
+                {
+                    "isVideo": true,
+                    "imageUrl": "assets/v2.mp4"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://www.xtrafondos.com/en/descargar.php?id=4359&vertical=1"
+                }
+            ]
+        },
+        {
+            "name": "Squidward",
+            "profileUrl": "assets/images/pp3.jpg",
+            "numOfStories": 2,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://drawinghowtodraw.com/stepbystepdrawinglessons/wp-content/uploads/2009/08/squidward-square.png"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-OjYX28aD5h-C9p0F16zGMGuagV2dm1QseImmPc77pCxZ7oIAzAQ92LLdNVBxOZWVfMQ&usqp=CAU"
+                }
+            ]
+        },
+        {
+            "name": "Gary",
+            "profileUrl": "assets/images/pp4.jpg",
+            "numOfStories": 3,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://www.xtrafondos.com/wallpapers/vertical/bob-esponja-un-heroe-al-rescate-4382.jpg"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://www.xtrafondos.com/en/descargar.php?id=4384&vertical=1"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://www.xtrafondos.com/wallpapers/vertical/gary-y-bob-esponja-en-un-heroe-al-rescate-4381.jpg"
+                }
+            ]
+        },
+        {
+            "name": "Mr. Krabs",
+            "profileUrl": "assets/images/pp5.jpg",
+            "numOfStories": 4,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://static.wikia.nocookie.net/69867056-953a-435b-805c-c1704424540b/scale-to-width/370"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://w0.peakpx.com/wallpaper/163/625/HD-wallpaper-iphone-12-mr-krab-cartoon-crab-iphone-spongebob-spongebob-squarepants.jpg"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgSEvT73ob73D-JPy7s5SsUZRFKyAvRKx-SWtMOAbAOeS-OkSXTwYD6zqPKGsRwGAe9iQ&usqp=CAU"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx3br7NCalCYyhuuXY_8RYQZXM2QpGV3QgWl8euZDKRKvu4pJUOROYFej4I2bauDOEbow&usqp=CAU"
+                }
+            ]
+        },
+        {
+            "name": "Sandy Cheeks",
+            "profileUrl": "assets/images/pp6.jpg",
+            "numOfStories": 2,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-juRJ195C3NtKyQuJ3xux3VeRA-LiQiNeJmaIkwbacqnhtznWoPDy2_QqrkbiePSPbQQ&usqp=CAU"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLXYwVPuY02pvdBpompy8USnBCIYFvipzjg0VEaUu3dj8ZrsYB4oXIXDT8zgdfqrotbQ&usqp=CAU"
+                }
+            ]
+        },
+        {
+            "name": "Larry the Lobster",
+            "profileUrl": "assets/images/pp7.jpg",
+            "numOfStories": 3,
+            "watchedStories": 0,
+            "completedOnce": false,
+            "stories": [
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://i.pinimg.com/474x/b8/4c/90/b84c9069ba263ed4ddc121360fcde06c.jpg"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://static.wikia.nocookie.net/spongebob/images/f/f6/200px-Larry_the_Lobster.svg.png/revision/latest?cb=20201121143957&path-prefix=id"
+                },
+                {
+                    "isVideo": false,
+                    "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvZ4SzsOOJxduyeRx-33G5u3hxM15ZwVg_kOm3VtVt5jmxBOy0Yoo0d3_apfDf57wumCs&usqp=CAU"
+                }
+            ]
+        }
+    ]
+}
